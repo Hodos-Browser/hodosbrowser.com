@@ -11,7 +11,7 @@ const description = "The browser with a built-in BitcoinSV wallet. Familiar brow
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content={description}>
   <title>{siteName}</title>
-  <link rel="icon" type="image/svg+xml" href="/hodos-icon.svg">
+  <link rel="icon" type="image/svg+xml" href="/Hodos_Gold_Icon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -31,8 +31,8 @@ const description = "The browser with a built-in BitcoinSV wallet. Familiar brow
       
       /* Text */
       --text-primary: #ffffff;
-      --text-secondary: #9ca3af;
-      --text-muted: #4a5568;
+      --text-secondary: #b0b7c3;
+      --text-muted: #6b7280;
       
       /* Semantic */
       --success: #2e7d32;
@@ -123,18 +123,11 @@ const description = "The browser with a built-in BitcoinSV wallet. Familiar brow
     .logo {
       display: flex;
       align-items: center;
-      gap: var(--space-sm);
     }
-    
+
     .logo img {
-      width: 32px;
       height: 32px;
-    }
-    
-    .logo-text {
-      font-size: 18px;
-      font-weight: 600;
-      color: var(--text-primary);
+      width: auto;
     }
     
     nav {
@@ -170,25 +163,28 @@ const description = "The browser with a built-in BitcoinSV wallet. Familiar brow
     }
     
     .btn-primary {
-      background: var(--gold);
-      color: var(--bg-primary);
-    }
-    
-    .btn-primary:hover {
-      background: var(--gold-light);
-      color: var(--bg-primary);
-      box-shadow: 0 0 24px rgba(166, 124, 0, 0.3);
-    }
-    
-    .btn-secondary {
-      background: var(--bg-elevated);
-      color: var(--text-primary);
-      border: 1px solid var(--border);
-    }
-    
-    .btn-secondary:hover {
-      border-color: var(--gold);
+      background: transparent;
       color: var(--gold);
+      border: 1.5px solid var(--gold);
+      box-shadow: inset 0 -2px 12px rgba(166, 124, 0, 0.15), 0 0 12px rgba(166, 124, 0, 0.08);
+    }
+
+    .btn-primary:hover {
+      color: var(--gold-light);
+      border-color: var(--gold-light);
+      box-shadow: inset 0 -8px 24px rgba(166, 124, 0, 0.3), 0 0 24px rgba(166, 124, 0, 0.2);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text-secondary);
+      border: 2px solid #4a4a55;
+    }
+
+    .btn-secondary:hover {
+      color: var(--text-primary);
+      border-color: #70707d;
+      box-shadow: inset 0 -6px 20px rgba(255, 255, 255, 0.08), 0 0 16px rgba(255, 255, 255, 0.05);
     }
     
     .btn-sm {
@@ -202,7 +198,11 @@ const description = "The browser with a built-in BitcoinSV wallet. Familiar brow
       display: flex;
       align-items: center;
       padding-top: 64px;
-      background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-elevated) 100%);
+      /* Hero: Gold glow on the heading area + silver diagonal ambient light */
+      background:
+        radial-gradient(ellipse 60% 40% at 50% 35%, rgba(166, 124, 0, 0.20) 0%, transparent 60%),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, transparent 50%, rgba(255, 255, 255, 0.02) 100%),
+        linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-elevated) 100%);
     }
     
     .hero-content {
@@ -246,12 +246,16 @@ const description = "The browser with a built-in BitcoinSV wallet. Familiar brow
     
     .hero-scroll {
       margin-top: var(--space-xl);
-      color: var(--text-muted);
-      font-size: 14px;
+      font-size: 15px;
     }
-    
+
     .hero-scroll a {
-      color: var(--text-muted);
+      color: var(--text-secondary);
+      transition: color 0.2s;
+    }
+
+    .hero-scroll a:hover {
+      color: var(--gold-light);
     }
     
     /* ========== Sections ========== */
@@ -275,9 +279,8 @@ const description = "The browser with a built-in BitcoinSV wallet. Familiar brow
     
     /* ========== Bridge Section ========== */
     .bridge {
-      background: var(--bg-elevated);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
+      /* Bridge: Silver diagonal — large area ambient light */
+      background: linear-gradient(135deg, #141416 0%, #1a1a1f 40%, #1d1d22 60%, #141416 100%);
     }
     
     .bridge-grid {
@@ -288,9 +291,17 @@ const description = "The browser with a built-in BitcoinSV wallet. Familiar brow
     
     .bridge-card {
       padding: var(--space-md);
-      background: var(--bg-primary);
+      background: linear-gradient(135deg, #131315 0%, #18181c 100%);
       border-radius: var(--radius-lg);
-      border: 1px solid var(--border);
+      border: 1px solid #363640;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+      transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+    }
+
+    .bridge-card:hover {
+      border-color: rgba(200, 200, 220, 0.35);
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.5), 0 0 20px rgba(200, 200, 220, 0.06);
+      transform: translateY(-1px);
     }
     
     .bridge-card h3 {
@@ -307,6 +318,13 @@ const description = "The browser with a built-in BitcoinSV wallet. Familiar brow
     }
     
     /* ========== Features ========== */
+    /* Features: Silver diagonal only (alternates — hero=gold, bridge=silver, features=silver, security=gold) */
+    #features {
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.025) 0%, transparent 40%, rgba(255, 255, 255, 0.02) 100%),
+        var(--bg-primary);
+    }
+
     .features-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -315,15 +333,18 @@ const description = "The browser with a built-in BitcoinSV wallet. Familiar brow
     
     .feature-card {
       padding: var(--space-lg);
-      background: var(--bg-elevated);
+      background: linear-gradient(135deg, #151517 0%, #1a1a1f 100%);
       border-radius: var(--radius-lg);
-      border: 1px solid var(--border);
+      border: 1px solid #363640;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
       text-align: center;
-      transition: border-color 0.2s;
+      transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
     }
-    
+
     .feature-card:hover {
-      border-color: var(--gold);
+      border-color: rgba(166, 124, 0, 0.6);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5), 0 0 24px rgba(166, 124, 0, 0.12);
+      transform: translateY(-2px);
     }
     
     .feature-icon {
@@ -343,9 +364,10 @@ const description = "The browser with a built-in BitcoinSV wallet. Familiar brow
     
     /* ========== Security Section ========== */
     .security {
-      background: var(--bg-elevated);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
+      /* Security: Gold glow + silver diagonal (alternates with Features' silver-only) */
+      background:
+        radial-gradient(ellipse 70% 50% at 50% 40%, rgba(166, 124, 0, 0.10) 0%, transparent 60%),
+        linear-gradient(135deg, #141416 0%, #1c1c22 35%, #1f1f25 50%, #1c1c22 65%, #141416 100%);
     }
     
     .security-list {
@@ -380,6 +402,7 @@ const description = "The browser with a built-in BitcoinSV wallet. Familiar brow
     
     .security-item span {
       color: var(--text-secondary);
+      font-size: 15px;
     }
     
     /* ========== Compatibility ========== */
@@ -393,11 +416,12 @@ const description = "The browser with a built-in BitcoinSV wallet. Familiar brow
     
     .wallet-badge {
       padding: var(--space-sm) var(--space-md);
-      background: var(--bg-elevated);
-      border: 1px solid var(--border);
+      background: linear-gradient(135deg, #151517 0%, #1a1a1f 100%);
+      border: 1px solid #2a2a30;
       border-radius: var(--radius-md);
       font-size: 16px;
-      color: var(--text-secondary);
+      color: var(--text-primary);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     }
     
     .compat-note {
@@ -415,6 +439,11 @@ const description = "The browser with a built-in BitcoinSV wallet. Familiar brow
     /* ========== Download Section ========== */
     .download {
       text-align: center;
+      /* Download: Gold pooling under the CTA buttons — "click me" warmth */
+      background:
+        radial-gradient(ellipse 50% 35% at 50% 60%, rgba(166, 124, 0, 0.18) 0%, transparent 60%),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, transparent 50%),
+        var(--bg-primary);
     }
     
     .download-buttons {
@@ -432,8 +461,8 @@ const description = "The browser with a built-in BitcoinSV wallet. Familiar brow
     
     /* ========== About/Footer ========== */
     .about {
-      background: var(--bg-elevated);
-      border-top: 1px solid var(--border);
+      /* About: Silver diagonal fading to black — gentle exit */
+      background: linear-gradient(135deg, #1a1a1f 0%, #161618 50%, var(--bg-primary) 100%);
     }
     
     .about-content {
@@ -457,7 +486,6 @@ const description = "The browser with a built-in BitcoinSV wallet. Familiar brow
       text-align: center;
       color: var(--text-muted);
       font-size: 14px;
-      border-top: 1px solid var(--border);
     }
     
     footer a {
@@ -491,8 +519,7 @@ const description = "The browser with a built-in BitcoinSV wallet. Familiar brow
   <header>
     <div class="container header-inner">
       <a href="/" class="logo">
-        <img src="/hodos-icon.svg" alt="Hodos" />
-        <span class="logo-text">Hodos Browser</span>
+        <img src="/Hodos_Gold_Browser_Icon.svg" alt="Hodos Browser" />
       </a>
       <nav>
         <a href="#features">Features</a>
@@ -507,12 +534,12 @@ const description = "The browser with a built-in BitcoinSV wallet. Familiar brow
   <section class="hero">
     <div class="container">
       <div class="hero-content">
-        <img src="/hodos-icon.svg" alt="Hodos Browser" class="hero-icon" />
+        <img src="/Hodos_Gold_Icon.svg" alt="Hodos Browser" class="hero-icon" />
         <h1>Browse the web.<br><span class="gold">Own your wallet.</span></h1>
         <p class="subtitle">The browser with a built-in BitcoinSV wallet. No extensions. No friction. Just familiar browsing with native BSV.</p>
         <div class="hero-buttons">
-          <a href="https://github.com/Hodos-Browser/Hodos-Browser/releases/download/v0.1.0-beta.1/HodosBrowser-0.1.0-beta.1-setup.exe" class="btn btn-primary">Download for Windows</a>
-          <a href="https://github.com/Hodos-Browser/Hodos-Browser/releases/download/v0.1.0-beta.1/HodosBrowser-0.1.0-beta.1.dmg" class="btn btn-secondary">Download for Mac</a>
+          <a href="https://github.com/Hodos-Browser/Hodos-Browser/releases/download/v0.2.0-beta.1/HodosBrowser-0.2.0-beta.1-setup.exe" class="btn btn-primary">Download for Windows</a>
+          <a href="https://github.com/Hodos-Browser/Hodos-Browser/releases/download/v0.2.0-beta.1/HodosBrowser-0.2.0-beta.1.dmg" class="btn btn-secondary">Download for Mac</a>
         </div>
         <p class="hero-scroll"><a href="#bridge">↓ Learn more</a></p>
       </div>
@@ -638,11 +665,11 @@ const description = "The browser with a built-in BitcoinSV wallet. Familiar brow
         <p>Download Hodos Browser and see for yourself.</p>
       </div>
       <div class="download-buttons">
-        <a href="https://github.com/Hodos-Browser/Hodos-Browser/releases/download/v0.1.0-beta.1/HodosBrowser-0.1.0-beta.1-setup.exe" class="btn btn-primary">⬇ Download for Windows</a>
-        <a href="https://github.com/Hodos-Browser/Hodos-Browser/releases/download/v0.1.0-beta.1/HodosBrowser-0.1.0-beta.1.dmg" class="btn btn-secondary">⬇ Download for macOS</a>
+        <a href="https://github.com/Hodos-Browser/Hodos-Browser/releases/download/v0.2.0-beta.1/HodosBrowser-0.2.0-beta.1-setup.exe" class="btn btn-primary">⬇ Download for Windows</a>
+        <a href="https://github.com/Hodos-Browser/Hodos-Browser/releases/download/v0.2.0-beta.1/HodosBrowser-0.2.0-beta.1.dmg" class="btn btn-secondary">⬇ Download for macOS</a>
       </div>
       <p class="download-info">
-        Version 0.1.0-beta.1 • Windows 10+ • macOS 10.15+
+        Version 0.2.0-beta.1 • Windows 10+ • macOS 10.15+
       </p>
     </div>
   </section>
