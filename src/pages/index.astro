@@ -198,11 +198,11 @@ const description = "The browser with a built-in BitcoinSV wallet. Familiar brow
       display: flex;
       align-items: center;
       padding-top: 64px;
-      /* Hero: Gold glow on the heading area + silver diagonal ambient light */
+      /* Hero: Matches New Tab page gradient — bright spotlight + subtle gold pool */
       background:
-        radial-gradient(ellipse 60% 40% at 50% 35%, rgba(166, 124, 0, 0.20) 0%, transparent 60%),
-        linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, transparent 50%, rgba(255, 255, 255, 0.02) 100%),
-        linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-elevated) 100%);
+        radial-gradient(ellipse 70% 30% at 50% 58%, rgba(166, 124, 0, 0.18) 0%, transparent 60%),
+        radial-gradient(ellipse 90% 85% at 50% 45%, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.06) 50%, transparent 80%),
+        var(--bg-primary);
     }
     
     .hero-content {
@@ -291,7 +291,9 @@ const description = "The browser with a built-in BitcoinSV wallet. Familiar brow
     
     .bridge-card {
       padding: var(--space-md);
-      background: linear-gradient(135deg, #131315 0%, #18181c 100%);
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 40%, rgba(255, 255, 255, 0.15) 0%, transparent 70%),
+        linear-gradient(135deg, #131315 0%, #18181c 100%);
       border-radius: var(--radius-lg);
       border: 1px solid #363640;
       box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
@@ -333,7 +335,9 @@ const description = "The browser with a built-in BitcoinSV wallet. Familiar brow
     
     .feature-card {
       padding: var(--space-lg);
-      background: linear-gradient(135deg, #151517 0%, #1a1a1f 100%);
+      background:
+        radial-gradient(ellipse 70% 50% at 50% 35%, rgba(255, 255, 255, 0.15) 0%, transparent 70%),
+        linear-gradient(135deg, #151517 0%, #1a1a1f 100%);
       border-radius: var(--radius-lg);
       border: 1px solid #363640;
       box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
@@ -416,8 +420,10 @@ const description = "The browser with a built-in BitcoinSV wallet. Familiar brow
     
     .wallet-badge {
       padding: var(--space-sm) var(--space-md);
-      background: linear-gradient(135deg, #151517 0%, #1a1a1f 100%);
-      border: 1px solid #2a2a30;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 40%, rgba(255, 255, 255, 0.15) 0%, transparent 70%),
+        linear-gradient(135deg, #151517 0%, #1a1a1f 100%);
+      border: 1px solid #363640;
       border-radius: var(--radius-md);
       font-size: 16px;
       color: var(--text-primary);
@@ -538,8 +544,8 @@ const description = "The browser with a built-in BitcoinSV wallet. Familiar brow
         <h1>Browse the web.<br><span class="gold">Own your wallet.</span></h1>
         <p class="subtitle">The browser with a built-in BitcoinSV wallet. No extensions. No friction. Just familiar browsing with native BSV.</p>
         <div class="hero-buttons">
-          <a href="https://github.com/Hodos-Browser/Hodos-Browser/releases/download/v0.2.0-beta.1/HodosBrowser-0.2.0-beta.1-setup.exe" class="btn btn-primary">Download for Windows</a>
-          <a href="https://github.com/Hodos-Browser/Hodos-Browser/releases/download/v0.2.0-beta.1/HodosBrowser-0.2.0-beta.1.dmg" class="btn btn-secondary">Download for Mac</a>
+          <a href="https://github.com/Hodos-Browser/Hodos-Browser/releases/download/v0.2.0-beta.3/HodosBrowser-0.2.0-beta.3-setup.exe" class="btn btn-primary">Download for Windows</a>
+          <a href="https://github.com/Hodos-Browser/Hodos-Browser/releases/download/v0.2.0-beta.3/HodosBrowser-0.2.0-beta.3.dmg" class="btn btn-secondary">Download for Mac</a>
         </div>
         <p class="hero-scroll"><a href="#bridge">↓ Learn more</a></p>
       </div>
@@ -665,11 +671,11 @@ const description = "The browser with a built-in BitcoinSV wallet. Familiar brow
         <p>Download Hodos Browser and see for yourself.</p>
       </div>
       <div class="download-buttons">
-        <a href="https://github.com/Hodos-Browser/Hodos-Browser/releases/download/v0.2.0-beta.1/HodosBrowser-0.2.0-beta.1-setup.exe" class="btn btn-primary">⬇ Download for Windows</a>
-        <a href="https://github.com/Hodos-Browser/Hodos-Browser/releases/download/v0.2.0-beta.1/HodosBrowser-0.2.0-beta.1.dmg" class="btn btn-secondary">⬇ Download for macOS</a>
+        <a href="https://github.com/Hodos-Browser/Hodos-Browser/releases/download/v0.2.0-beta.3/HodosBrowser-0.2.0-beta.3-setup.exe" class="btn btn-primary">⬇ Download for Windows</a>
+        <a href="https://github.com/Hodos-Browser/Hodos-Browser/releases/download/v0.2.0-beta.3/HodosBrowser-0.2.0-beta.3.dmg" class="btn btn-secondary">⬇ Download for macOS</a>
       </div>
       <p class="download-info">
-        Version 0.2.0-beta.1 • Windows 10+ • macOS 10.15+
+        Version 0.2.0-beta.3 • Windows 10+ • macOS 10.15+
       </p>
     </div>
   </section>
