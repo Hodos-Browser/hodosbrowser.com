@@ -962,7 +962,7 @@ const macDownload = `https://github.com/Hodos-Browser/Hodos-Browser/releases/dow
       <div class="security-grid">
         <div class="security-narrative">
           <p>
-            Trust Wallet, owned by Binance, migrated their wallet backend from C++ to Rust for the same reason we chose it: memory safety eliminates entire classes of vulnerabilities — no buffer overflows, no use-after-free, no null pointer dereferences.
+            Rust was created by Mozilla, powers Signal's cryptography, and runs Cloudflare's critical infrastructure. They all chose it for the same reason we did: memory safety eliminates entire classes of vulnerabilities — no buffer overflows, no use-after-free, no null pointer dereferences.
           </p>
           <p>
             Our wallet runs as a completely separate process. Even if a malicious website compromises your browser tab, it cannot access your private keys. They exist in isolated memory that web content can never reach.
@@ -985,15 +985,15 @@ const macDownload = `https://github.com/Hodos-Browser/Hodos-Browser/releases/dow
         <div class="security-list">
           <div class="security-item">
             <span class="security-check">✓</span>
+            <p><strong>BRC-42/43 key derivation</strong> <span>— ECDH exchanges, HMAC authentication, per-counterparty child keys.</span></p>
+          </div>
+          <div class="security-item">
+            <span class="security-check">✓</span>
             <p><strong>Rust wallet in isolated process</strong> <span>— Keys never touch web content or JavaScript.</span></p>
           </div>
           <div class="security-item">
             <span class="security-check">✓</span>
-            <p><strong>OS-level encryption at rest</strong> <span>— DPAPI on Windows, Keychain on macOS.</span></p>
-          </div>
-          <div class="security-item">
-            <span class="security-check">✓</span>
-            <p><strong>PIN with AES-256-GCM</strong> <span>— PBKDF2 key derivation, 600K iterations.</span></p>
+            <p><strong>PIN + OS-level encryption at rest</strong> <span>— AES-256-GCM with DPAPI (Windows) and Keychain (macOS).</span></p>
           </div>
           <div class="security-item">
             <span class="security-check">✓</span>
@@ -1027,12 +1027,12 @@ const macDownload = `https://github.com/Hodos-Browser/Hodos-Browser/releases/dow
           <p>Import via BIP-39 recovery phrase</p>
         </div>
         <div class="compat-card">
-          <h4>Centbee</h4>
+          <h4>Yours</h4>
           <p>Import via BIP-39 recovery phrase</p>
         </div>
         <div class="compat-card">
-          <h4>Any BIP-39 Wallet</h4>
-          <p>Standard 12 or 24-word recovery</p>
+          <h4>Any BSV Legacy Wallet</h4>
+          <p>Send and receive via legacy addresses</p>
         </div>
       </div>
 
@@ -1095,10 +1095,7 @@ const macDownload = `https://github.com/Hodos-Browser/Hodos-Browser/releases/dow
         <div class="about-divider"></div>
         <h2>Built by Marston Enterprises</h2>
         <p>
-          Your browser should protect you, not monetize you. Hodos is built on a simple principle: your keys, your coins, your data. No telemetry. No ad networks. No middlemen.
-        </p>
-        <p>
-          Under the hood, Hodos is a three-layer native application — a React UI, a C++ browser engine built on Chromium Embedded Framework, and a Rust wallet backend with 76+ API endpoints, 18 database repositories, and 11 cryptography modules. This isn't a weekend project — it's production software built to handle real money.
+          Under the hood, Hodos is a three-layer native application — a React UI, a C++ browser engine built on Chromium Embedded Framework, and a Rust wallet backend with 76+ API endpoints, 18 database repositories, and 11 cryptography modules. Purpose-built to handle real money.
         </p>
         <p>
           Questions, feedback, or want to contribute?
