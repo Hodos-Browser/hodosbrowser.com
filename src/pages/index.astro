@@ -2,6 +2,9 @@
 const siteName = "Hodos Browser";
 const tagline = "Browse the web. Own your wallet.";
 const description = "The browser with a built-in BitcoinSV wallet. Familiar browsing, native BSV.";
+const version = "0.2.0-beta.4";
+const winDownload = `https://github.com/Hodos-Browser/Hodos-Browser/releases/download/v${version}/HodosBrowser-${version}-setup.exe`;
+const macDownload = `https://github.com/Hodos-Browser/Hodos-Browser/releases/download/v${version}/HodosBrowser-${version}.dmg`;
 ---
 
 <!DOCTYPE html>
@@ -126,24 +129,49 @@ const description = "The browser with a built-in BitcoinSV wallet. Familiar brow
     }
 
     .logo img {
-      height: 32px;
+      height: 36px;
       width: auto;
     }
-    
+
     nav {
       display: flex;
       align-items: center;
       gap: var(--space-md);
     }
-    
+
     nav a {
       color: var(--text-secondary);
       font-size: 14px;
       font-weight: 500;
+      transition: color 0.2s;
     }
-    
+
     nav a:hover {
       color: var(--text-primary);
+    }
+
+    nav a.active {
+      color: var(--gold);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    .nav-toggle svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--text-secondary);
+      stroke-width: 2;
+      fill: none;
+    }
+
+    .nav-toggle:hover svg {
+      stroke: var(--text-primary);
     }
     
     /* ========== Buttons ========== */
@@ -191,6 +219,15 @@ const description = "The browser with a built-in BitcoinSV wallet. Familiar brow
       padding: 8px 16px;
       font-size: 14px;
     }
+
+    .btn-lg {
+      padding: 14px 32px;
+      font-size: 17px;
+    }
+
+    .btn svg {
+      flex-shrink: 0;
+    }
     
     /* ========== Hero ========== */
     .hero {
@@ -200,28 +237,36 @@ const description = "The browser with a built-in BitcoinSV wallet. Familiar brow
       padding-top: 64px;
       /* Hero: Matches New Tab page gradient — bright spotlight + subtle gold pool */
       background:
-        radial-gradient(ellipse 70% 30% at 50% 58%, rgba(166, 124, 0, 0.18) 0%, transparent 60%),
-        radial-gradient(ellipse 90% 85% at 50% 45%, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.06) 50%, transparent 80%),
+        radial-gradient(ellipse 70% 30% at 50% 58%, rgba(166, 124, 0, 0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 90% 85% at 50% 45%, rgba(255, 255, 255, 0.17) 0%, rgba(255, 255, 255, 0.04) 50%, transparent 80%),
         var(--bg-primary);
     }
     
     .hero-content {
       text-align: center;
-      max-width: 800px;
+      max-width: 1000px;
       margin: 0 auto;
     }
     
-    .hero-icon {
-      width: 80px;
-      height: 80px;
+    .hero-headline {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-md);
       margin-bottom: var(--space-md);
     }
-    
+
+    .hero-icon {
+      height: 8.0em;
+      width: auto;
+      flex-shrink: 0;
+    }
+
     .hero h1 {
       font-size: clamp(40px, 8vw, 64px);
       font-weight: 700;
       line-height: 1.1;
-      margin-bottom: var(--space-md);
+      letter-spacing: -0.02em;
+      margin: 0;
     }
     
     .hero h1 .gold {
@@ -232,7 +277,7 @@ const description = "The browser with a built-in BitcoinSV wallet. Familiar brow
       font-size: clamp(18px, 3vw, 24px);
       color: var(--text-secondary);
       margin-bottom: var(--space-lg);
-      max-width: 600px;
+      max-width: 1000px;
       margin-left: auto;
       margin-right: auto;
     }
@@ -244,8 +289,19 @@ const description = "The browser with a built-in BitcoinSV wallet. Familiar brow
       flex-wrap: wrap;
     }
     
+    .hero-trust {
+      margin-top: var(--space-md);
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .hero-trust span {
+      margin: 0 8px;
+      opacity: 0.4;
+    }
+
     .hero-scroll {
-      margin-top: var(--space-xl);
+      margin-top: var(--space-lg);
       font-size: 15px;
     }
 
@@ -296,6 +352,7 @@ const description = "The browser with a built-in BitcoinSV wallet. Familiar brow
         linear-gradient(135deg, #131315 0%, #18181c 100%);
       border-radius: var(--radius-lg);
       border: 1px solid #363640;
+      border-left: 3px solid var(--gold);
       box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
       transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
     }
@@ -319,6 +376,80 @@ const description = "The browser with a built-in BitcoinSV wallet. Familiar brow
       font-size: 15px;
     }
     
+    /* ========== Architecture ========== */
+    .arch-flow {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+      max-width: 520px;
+      margin: 0 auto var(--space-lg);
+    }
+
+    .arch-card {
+      width: 100%;
+      padding: var(--space-md);
+      background: linear-gradient(135deg, #131315 0%, #18181c 100%);
+      border-radius: var(--radius-lg);
+      border: 1px solid #363640;
+      position: relative;
+    }
+
+    .arch-card.layer-ui { border-left: 3px solid #9ca3af; }
+    .arch-card.layer-engine { border-left: 3px solid #6b7280; }
+    .arch-card.layer-wallet { border-left: 3px solid var(--gold); }
+
+    .arch-label {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .arch-card h3 {
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
+
+    .arch-card p {
+      font-size: 15px;
+      color: var(--text-secondary);
+    }
+
+    .arch-connector {
+      width: 2px;
+      height: 24px;
+      background: var(--border);
+      position: relative;
+    }
+
+    .arch-connector::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 5px solid var(--border);
+    }
+
+    .arch-callout {
+      max-width: 620px;
+      margin: 0 auto;
+      text-align: center;
+      padding: var(--space-md);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      background: var(--bg-elevated);
+      color: var(--text-secondary);
+      font-size: 15px;
+    }
+
     /* ========== Features ========== */
     /* Features: Silver diagonal only (alternates — hero=gold, bridge=silver, features=silver, security=gold) */
     #features {
@@ -329,19 +460,18 @@ const description = "The browser with a built-in BitcoinSV wallet. Familiar brow
 
     .features-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: var(--space-md);
     }
-    
+
     .feature-card {
-      padding: var(--space-lg);
+      padding: var(--space-md) var(--space-md);
       background:
         radial-gradient(ellipse 70% 50% at 50% 35%, rgba(255, 255, 255, 0.15) 0%, transparent 70%),
         linear-gradient(135deg, #151517 0%, #1a1a1f 100%);
       border-radius: var(--radius-lg);
       border: 1px solid #363640;
       box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
-      text-align: center;
       transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
     }
 
@@ -350,17 +480,15 @@ const description = "The browser with a built-in BitcoinSV wallet. Familiar brow
       box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5), 0 0 24px rgba(166, 124, 0, 0.12);
       transform: translateY(-2px);
     }
-    
-    .feature-icon {
-      font-size: 40px;
-      margin-bottom: var(--space-sm);
-    }
-    
+
     .feature-card h3 {
-      font-size: 20px;
-      margin-bottom: var(--space-xs);
+      font-size: 18px;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: var(--space-xs);
     }
-    
+
     .feature-card p {
       color: var(--text-secondary);
       font-size: 15px;
@@ -368,78 +496,152 @@ const description = "The browser with a built-in BitcoinSV wallet. Familiar brow
     
     /* ========== Security Section ========== */
     .security {
-      /* Security: Gold glow + silver diagonal (alternates with Features' silver-only) */
       background:
         radial-gradient(ellipse 70% 50% at 50% 40%, rgba(166, 124, 0, 0.10) 0%, transparent 60%),
         linear-gradient(135deg, #141416 0%, #1c1c22 35%, #1f1f25 50%, #1c1c22 65%, #141416 100%);
     }
-    
-    .security-list {
-      max-width: 700px;
+
+    .security-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xl);
+      max-width: 1000px;
       margin: 0 auto;
     }
-    
+
+    .security-narrative p {
+      color: var(--text-secondary);
+      font-size: 16px;
+      line-height: 1.7;
+      margin-bottom: var(--space-md);
+    }
+
+    .security-stats {
+      display: flex;
+      gap: var(--space-sm);
+      margin-top: var(--space-md);
+    }
+
+    .stat-card {
+      flex: 1;
+      text-align: center;
+      padding: var(--space-sm);
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+    }
+
+    .stat-number {
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .security-list {
+      max-width: 700px;
+    }
+
     .security-item {
       display: flex;
       gap: var(--space-sm);
       padding: var(--space-sm) 0;
       border-bottom: 1px solid var(--border);
     }
-    
+
     .security-item:last-child {
       border-bottom: none;
     }
-    
+
     .security-check {
       color: var(--gold);
       font-size: 20px;
       flex-shrink: 0;
     }
-    
+
     .security-item p {
-      font-size: 16px;
+      font-size: 15px;
     }
-    
+
     .security-item strong {
       color: var(--text-primary);
     }
-    
+
     .security-item span {
       color: var(--text-secondary);
-      font-size: 15px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .security-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .security-stats {
+        flex-wrap: wrap;
+      }
     }
     
     /* ========== Compatibility ========== */
-    .compat-wallets {
-      display: flex;
-      justify-content: center;
-      gap: var(--space-lg);
-      flex-wrap: wrap;
-      margin-bottom: var(--space-lg);
+    .compat-sub-header {
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: var(--space-md);
     }
-    
-    .wallet-badge {
+
+    .compat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--space-sm);
+      max-width: 900px;
+      margin: 0 auto var(--space-xl);
+    }
+
+    .compat-card {
       padding: var(--space-sm) var(--space-md);
-      background:
-        radial-gradient(ellipse 80% 60% at 50% 40%, rgba(255, 255, 255, 0.15) 0%, transparent 70%),
-        linear-gradient(135deg, #151517 0%, #1a1a1f 100%);
+      background: linear-gradient(135deg, #131315 0%, #18181c 100%);
       border: 1px solid #363640;
       border-radius: var(--radius-md);
-      font-size: 16px;
-      color: var(--text-primary);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     }
-    
+
+    .compat-card h4 {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .compat-card p {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .compat-card.protocol {
+      background: linear-gradient(135deg, rgba(166, 124, 0, 0.06) 0%, rgba(166, 124, 0, 0.02) 100%);
+      border-color: rgba(166, 124, 0, 0.25);
+    }
+
+    .compat-card.protocol h4 {
+      color: var(--gold);
+    }
+
     .compat-note {
       text-align: center;
       color: var(--text-secondary);
-      font-size: 16px;
-      max-width: 600px;
+      font-size: 15px;
+      max-width: 650px;
       margin: 0 auto;
-    }
-    
-    .compat-note strong {
-      color: var(--gold);
     }
     
     /* ========== Download Section ========== */
@@ -472,9 +674,17 @@ const description = "The browser with a built-in BitcoinSV wallet. Familiar brow
     }
     
     .about-content {
-      max-width: 600px;
+      max-width: 700px;
       margin: 0 auto;
       text-align: center;
+    }
+
+    .about-divider {
+      width: 60px;
+      height: 2px;
+      background: var(--gold);
+      margin: 0 auto var(--space-lg);
+      border-radius: 1px;
     }
     
     .about-content p {
@@ -488,31 +698,88 @@ const description = "The browser with a built-in BitcoinSV wallet. Familiar brow
     }
     
     footer {
-      padding: var(--space-md) 0;
+      padding: var(--space-lg) 0;
       text-align: center;
       color: var(--text-muted);
       font-size: 14px;
+      border-top: 1px solid var(--border);
     }
-    
+
+    .footer-links {
+      margin-bottom: var(--space-xs);
+    }
+
+    .footer-sep {
+      margin: 0 var(--space-xs);
+      opacity: 0.4;
+    }
+
+    .footer-muted {
+      opacity: 0.5;
+    }
+
+    .footer-copy {
+      margin-top: var(--space-xs);
+    }
+
     footer a {
       color: var(--text-muted);
-      margin: 0 var(--space-sm);
     }
-    
+
     footer a:hover {
       color: var(--gold);
+    }
+
+    /* ========== Fade-in Animation ========== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: none;
     }
     
     /* ========== Responsive ========== */
     @media (max-width: 768px) {
+      .nav-toggle {
+        display: block;
+      }
+
       nav {
         display: none;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: rgba(10, 10, 11, 0.97);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border);
+        padding: var(--space-sm) var(--space-md);
+        gap: 0;
       }
-      
+
+      nav a {
+        padding: 12px 0;
+        font-size: 16px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      nav a:last-child {
+        border-bottom: none;
+      }
+
+      header.nav-open nav {
+        display: flex;
+      }
+
       .hero h1 {
         font-size: 36px;
       }
-      
+
       section {
         padding: var(--space-xl) 0;
       }
@@ -522,13 +789,17 @@ const description = "The browser with a built-in BitcoinSV wallet. Familiar brow
 
 <body>
   <!-- Header -->
-  <header>
+  <header id="site-header">
     <div class="container header-inner">
       <a href="/" class="logo">
         <img src="/Hodos_Gold_Browser_Icon.svg" alt="Hodos Browser" />
       </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
       <nav>
         <a href="#features">Features</a>
+        <a href="#architecture">How It Works</a>
         <a href="#security">Security</a>
         <a href="#download">Download</a>
         <a href="#about">About</a>
@@ -540,20 +811,23 @@ const description = "The browser with a built-in BitcoinSV wallet. Familiar brow
   <section class="hero">
     <div class="container">
       <div class="hero-content">
-        <img src="/Hodos_Gold_Icon.svg" alt="Hodos Browser" class="hero-icon" />
-        <h1>Browse the web.<br><span class="gold">Own your wallet.</span></h1>
-        <p class="subtitle">The browser with a built-in BitcoinSV wallet. No extensions. No friction. Just familiar browsing with native BSV.</p>
-        <div class="hero-buttons">
-          <a href="https://github.com/Hodos-Browser/Hodos-Browser/releases/download/v0.2.0-beta.4/HodosBrowser-0.2.0-beta.4-setup.exe" class="btn btn-primary">Download for Windows</a>
-          <a href="https://github.com/Hodos-Browser/Hodos-Browser/releases/download/v0.2.0-beta.4/HodosBrowser-0.2.0-beta.4.dmg" class="btn btn-secondary">Download for Mac</a>
+        <div class="hero-headline">
+          <img src="/Hodos_Gold_Icon.svg" alt="Hodos Browser" class="hero-icon" />
+          <h1>Browse freely.<br><span class="gold">Transact natively.</span></h1>
         </div>
+        <p class="subtitle">A real browser with a Rust-powered BitcoinSV wallet. Your keys live in a completely separate process — no extension, no custodian, just native security.</p>
+        <div class="hero-buttons">
+          <a href={winDownload} class="btn btn-primary">Download for Windows</a>
+          <a href={macDownload} class="btn btn-secondary">Download for Mac</a>
+        </div>
+        <p class="hero-trust">Built on Chromium<span>&middot;</span>Wallet written in Rust<span>&middot;</span>Open development</p>
         <p class="hero-scroll"><a href="#bridge">↓ Learn more</a></p>
       </div>
     </div>
   </section>
 
   <!-- Bridge Section -->
-  <section class="bridge" id="bridge">
+  <section class="bridge fade-in" id="bridge">
     <div class="container">
       <div class="section-header">
         <h2>Your bridge to Web3</h2>
@@ -561,27 +835,71 @@ const description = "The browser with a built-in BitcoinSV wallet. Familiar brow
       </div>
       <div class="bridge-grid">
         <div class="bridge-card">
-          <h3>🌐 Full Web Compatibility</h3>
-          <p>Browse any website. Everything works exactly as you'd expect. No compromises.</p>
+          <h3>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            Just a browser
+          </h3>
+          <p>Tabs, bookmarks, history, downloads — everything works. Built on Chromium, the same engine behind Chrome, Edge, and Brave.</p>
         </div>
         <div class="bridge-card">
-          <h3>💸 Native BSV Payments</h3>
-          <p>When sites support BitcoinSV, pay seamlessly. No extensions to install or manage.</p>
+          <h3>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M12 10v4"/><path d="M10 12h4"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+            Wallet built in, not bolted on
+          </h3>
+          <p>No extensions to install or break. Send and receive BSV natively. Pay websites with one click.</p>
         </div>
         <div class="bridge-card">
-          <h3>🔄 Use Your Existing Wallet</h3>
-          <p>Recover from HandCash, RockWallet, Centbee, or start fresh. Your choice.</p>
+          <h3>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 1-9 9m9-9a9 9 0 0 0-9-9m9 9H3m9 9a9 9 0 0 1-9-9m9 9c1.66 0 3-4.03 3-9s-1.34-9-3-9m0 18c-1.66 0-3-4.03-3-9s1.34-9 3-9m-9 9a9 9 0 0 1 9-9"/></svg>
+            Bring your existing wallet
+          </h3>
+          <p>Recover from HandCash, RockWallet, Centbee, or any BIP-39 wallet. Your recovery phrase, your coins, no migration friction.</p>
         </div>
         <div class="bridge-card">
-          <h3>🚀 BRC-100 Ready</h3>
-          <p>Built on the latest wallet standard. Future-proof from day one.</p>
+          <h3>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+            BRC-100 native
+          </h3>
+          <p>Full implementation of the BRC-100 wallet protocol — authentication, payments, certificates, and encrypted messaging. Sites that speak BRC-100 work out of the box.</p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Architecture -->
+  <section id="architecture" class="fade-in" style="background: linear-gradient(135deg, rgba(255,255,255,0.015) 0%, transparent 40%, rgba(255,255,255,0.01) 100%), var(--bg-primary);">
+    <div class="container">
+      <div class="section-header">
+        <h2>Three layers. Three languages. One purpose.</h2>
+        <p>Every layer does one job, and nothing else.</p>
+      </div>
+      <div class="arch-flow">
+        <div class="arch-card layer-ui">
+          <div class="arch-label">Layer 1 — React + TypeScript</div>
+          <h3>User Interface</h3>
+          <p>Everything you see — tabs, navigation, wallet panel. Never handles keys or signing.</p>
+        </div>
+        <div class="arch-connector"></div>
+        <div class="arch-card layer-engine">
+          <div class="arch-label">Layer 2 — C++ / Chromium</div>
+          <h3>Browser Engine</h3>
+          <p>Manages processes, intercepts HTTP requests, enforces domain permissions and spending limits.</p>
+        </div>
+        <div class="arch-connector"></div>
+        <div class="arch-card layer-wallet">
+          <div class="arch-label">Layer 3 — Rust</div>
+          <h3>Wallet Backend</h3>
+          <p>Isolated process. Handles all cryptography, key storage, and blockchain communication. Keys never leave this layer.</p>
+        </div>
+      </div>
+      <div class="arch-callout">
+        This is the same process isolation model that Chrome, Brave, and Firefox use for security — extended to protect your wallet and private keys.
+      </div>
+    </div>
+  </section>
+
   <!-- Features -->
-  <section id="features">
+  <section id="features" class="fade-in">
     <div class="container">
       <div class="section-header">
         <h2>Built different</h2>
@@ -589,76 +907,157 @@ const description = "The browser with a built-in BitcoinSV wallet. Familiar brow
       </div>
       <div class="features-grid">
         <div class="feature-card">
-          <div class="feature-icon">💰</div>
-          <h3>Native Wallet</h3>
-          <p>BitcoinSV built into the browser. Not bolted on. Your keys never leave your device.</p>
+          <h3>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Rust-powered wallet
+          </h3>
+          <p>Your private keys live in a separate Rust process. Memory-safe, 10-20x faster crypto operations than JavaScript, and completely invisible to websites.</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">🛡️</div>
-          <h3>Private by Design</h3>
-          <p>Like Brave and Firefox, we respect your privacy. No tracking, no data collection.</p>
+          <h3>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+            3-layer ad blocking
+          </h3>
+          <p>Network-level blocking, cosmetic CSS hiding, and scriptlet injection. Same approach as Brave and uBlock Origin. Faster pages, less tracking.</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">🚫</div>
-          <h3>Ad-Free Browsing</h3>
-          <p>Built-in ad and tracker blocking. Faster pages, cleaner experience.</p>
+          <h3>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M15 9h-2V7a1 1 0 0 0-2 0v2H9a1 1 0 0 0 0 2h2v2a1 1 0 0 0 2 0v-2h2a1 1 0 0 0 0-2z" fill="none"/><path d="M8 17s1.5-2 4-2 4 2 4 2"/></svg>
+            Fingerprint protection
+          </h3>
+          <p>Brave-style farbling randomizes your Canvas, WebGL, and audio fingerprints. Sites can't build a unique profile to track you.</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">⚡</div>
-          <h3>Native Performance</h3>
-          <p>Built on Chromium. Fast, efficient, and familiar.</p>
+          <h3>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+            PeerPay
+          </h3>
+          <p>Send BSV directly to anyone, browser-to-browser. Encrypted peer-to-peer payments with no intermediary beyond the blockchain.</p>
+        </div>
+        <div class="feature-card">
+          <h3>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="18" rx="2"/><line x1="9" y1="3" x2="9" y2="21"/></svg>
+            Process isolation
+          </h3>
+          <p>9 distinct processes. Each tab, each overlay, the wallet — all isolated. A compromised website cannot touch your UI or your funds.</p>
+        </div>
+        <div class="feature-card">
+          <h3>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/><path d="M2 7h20"/></svg>
+            Multi-window & tabs
+          </h3>
+          <p>Tab tear-off, multi-window support, keyboard shortcuts, find-in-page. A real browser, not a wrapper.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Security -->
-  <section class="security" id="security">
+  <section class="security fade-in" id="security">
     <div class="container">
       <div class="section-header">
-        <h2>Security you can trust</h2>
-        <p>We handle real money. We take that seriously.</p>
+        <h2>Production-grade security</h2>
+        <p>We handle real money. 70% of C++ security vulnerabilities are memory-related. That's why our wallet is written in Rust.</p>
       </div>
-      <div class="security-list">
-        <div class="security-item">
-          <span class="security-check">✓</span>
-          <p><strong>Wallet runs in isolated process</strong> <span>— Your keys never touch JavaScript or web content.</span></p>
+      <div class="security-grid">
+        <div class="security-narrative">
+          <p>
+            Trust Wallet, owned by Binance, migrated their wallet backend from C++ to Rust for the same reason we chose it: memory safety eliminates entire classes of vulnerabilities — no buffer overflows, no use-after-free, no null pointer dereferences.
+          </p>
+          <p>
+            Our wallet runs as a completely separate process. Even if a malicious website compromises your browser tab, it cannot access your private keys. They exist in isolated memory that web content can never reach.
+          </p>
+          <div class="security-stats">
+            <div class="stat-card">
+              <div class="stat-number">9</div>
+              <div class="stat-label">Isolated processes</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">0</div>
+              <div class="stat-label">Keys in JavaScript</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">3</div>
+              <div class="stat-label">Layers of defense</div>
+            </div>
+          </div>
         </div>
-        <div class="security-item">
-          <span class="security-check">✓</span>
-          <p><strong>Written in Rust</strong> <span>— The language trusted by Mozilla, Microsoft, and Cloudflare for security-critical code.</span></p>
-        </div>
-        <div class="security-item">
-          <span class="security-check">✓</span>
-          <p><strong>Process-per-tab isolation</strong> <span>— Same security model as Brave and Firefox.</span></p>
-        </div>
-        <div class="security-item">
-          <span class="security-check">✓</span>
-          <p><strong>Per-site spending limits</strong> <span>— You control how much each site can request.</span></p>
-        </div>
-        <div class="security-item">
-          <span class="security-check">✓</span>
-          <p><strong>Encrypted locally</strong> <span>— Your wallet is protected with your PIN and OS-level encryption.</span></p>
+        <div class="security-list">
+          <div class="security-item">
+            <span class="security-check">✓</span>
+            <p><strong>Rust wallet in isolated process</strong> <span>— Keys never touch web content or JavaScript.</span></p>
+          </div>
+          <div class="security-item">
+            <span class="security-check">✓</span>
+            <p><strong>OS-level encryption at rest</strong> <span>— DPAPI on Windows, Keychain on macOS.</span></p>
+          </div>
+          <div class="security-item">
+            <span class="security-check">✓</span>
+            <p><strong>PIN with AES-256-GCM</strong> <span>— PBKDF2 key derivation, 600K iterations.</span></p>
+          </div>
+          <div class="security-item">
+            <span class="security-check">✓</span>
+            <p><strong>Per-site spending limits</strong> <span>— USD-denominated, with rate limiting.</span></p>
+          </div>
+          <div class="security-item">
+            <span class="security-check">✓</span>
+            <p><strong>Defense-in-depth</strong> <span>— C++ auto-approve engine + Rust-side validation.</span></p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Wallet Compatibility -->
-  <section id="compatibility">
+  <section id="compatibility" class="fade-in">
     <div class="container">
       <div class="section-header">
-        <h2>Works with wallets you know</h2>
-        <p>Recover your existing wallet or start fresh.</p>
+        <h2>Compatible from day one</h2>
+        <p>Bring your wallet. We speak your protocol.</p>
       </div>
-      <div class="compat-wallets">
-        <span class="wallet-badge">HandCash</span>
-        <span class="wallet-badge">RockWallet</span>
-        <span class="wallet-badge">Centbee</span>
-        <span class="wallet-badge">Any BIP-39 wallet</span>
+
+      <p class="compat-sub-header">Wallet Recovery</p>
+      <div class="compat-grid">
+        <div class="compat-card">
+          <h4>HandCash</h4>
+          <p>Import via BIP-39 recovery phrase</p>
+        </div>
+        <div class="compat-card">
+          <h4>RockWallet</h4>
+          <p>Import via BIP-39 recovery phrase</p>
+        </div>
+        <div class="compat-card">
+          <h4>Centbee</h4>
+          <p>Import via BIP-39 recovery phrase</p>
+        </div>
+        <div class="compat-card">
+          <h4>Any BIP-39 Wallet</h4>
+          <p>Standard 12 or 24-word recovery</p>
+        </div>
       </div>
+
+      <p class="compat-sub-header">Protocol Support</p>
+      <div class="compat-grid">
+        <div class="compat-card protocol">
+          <h4>BRC-100</h4>
+          <p>Wallet protocol standard</p>
+        </div>
+        <div class="compat-card protocol">
+          <h4>BRC-29</h4>
+          <p>Direct payments (PeerPay)</p>
+        </div>
+        <div class="compat-card protocol">
+          <h4>BRC-42 / 43</h4>
+          <p>Key derivation & invoices</p>
+        </div>
+        <div class="compat-card protocol">
+          <h4>BEEF / SPV</h4>
+          <p>Merkle-proven transactions</p>
+        </div>
+      </div>
+
       <p class="compat-note">
-        Plus full <strong>BRC-100</strong> compatibility — the new standard for BitcoinSV app authentication and payments.
+        Full BRC-100 Groups A and B implemented. Authentication, transactions, identity certificates, and encrypted messaging.
       </p>
     </div>
   </section>
@@ -667,32 +1066,47 @@ const description = "The browser with a built-in BitcoinSV wallet. Familiar brow
   <section class="download" id="download">
     <div class="container">
       <div class="section-header">
-        <h2>Ready to try it?</h2>
-        <p>Download Hodos Browser and see for yourself.</p>
+        <h2>Download Hodos Browser</h2>
+        <p>Free. No account required. Your wallet, your keys, your device.</p>
       </div>
       <div class="download-buttons">
-        <a href="https://github.com/Hodos-Browser/Hodos-Browser/releases/download/v0.2.0-beta.4/HodosBrowser-0.2.0-beta.4-setup.exe" class="btn btn-primary">⬇ Download for Windows</a>
-        <a href="https://github.com/Hodos-Browser/Hodos-Browser/releases/download/v0.2.0-beta.4/HodosBrowser-0.2.0-beta.4.dmg" class="btn btn-secondary">⬇ Download for macOS</a>
+        <a href={winDownload} class="btn btn-primary btn-lg">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M0 2.3l6.5-.9v6.3H0V2.3zm7.3-1l8.7-1.2v7.6H7.3V1.3zM16 8.5v7.6l-8.7-1.2V8.5H16zM6.5 14.6L0 13.7V8.5h6.5v6.1z"/></svg>
+          Download for Windows
+        </a>
+        <a href={macDownload} class="btn btn-secondary btn-lg">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M11.2 0c.1 1-.3 2-1 2.7-.7.8-1.7 1.3-2.7 1.2-.1-.9.4-1.9 1-2.6C9.2.5 10.3 0 11.2 0zm3.3 5.5c-.1 0-2-.9-2-3.2 0-2 1.6-2.9 1.7-3C13.3.1 12 0 11.3 0c-.9 0-1.8.5-2.3.5S7.5 0 6.5.1c-1.2 0-2.3.7-3 1.7C2 4.2 3 7.7 4.4 9.6c.7 1 1.5 2 2.5 2 1 0 1.4-.6 2.6-.6s1.6.6 2.6.6 1.7-1 2.4-2c.4-.5.7-1.1.9-1.7-2-.7-2.9-3.2-1-4.4z"/></svg>
+          Download for macOS
+        </a>
       </div>
       <p class="download-info">
-        Version 0.2.0-beta.4 • Windows 10+ • macOS 10.15+
+        Version {version} &middot; Windows 10+ &middot; macOS 10.15+
+      </p>
+      <p class="download-info" style="margin-top: 8px;">
+        <a href="https://github.com/Hodos-Browser/Hodos-Browser" style="color: var(--text-muted); text-decoration: underline;">View on GitHub</a>
       </p>
     </div>
   </section>
 
   <!-- About -->
-  <section class="about" id="about">
+  <section class="about fade-in" id="about">
     <div class="container">
       <div class="about-content">
+        <div class="about-divider"></div>
         <h2>Built by Marston Enterprises</h2>
         <p>
-          We believe the internet should work for you — not advertisers, not data brokers, not middlemen. 
-          Hodos Browser is our step toward that future.
+          Your browser should protect you, not monetize you. Hodos is built on a simple principle: your keys, your coins, your data. No telemetry. No ad networks. No middlemen.
         </p>
         <p>
-          Questions? Feedback? We'd love to hear from you.
+          Under the hood, Hodos is a three-layer native application — a React UI, a C++ browser engine built on Chromium Embedded Framework, and a Rust wallet backend with 76+ API endpoints, 18 database repositories, and 11 cryptography modules. This isn't a weekend project — it's production software built to handle real money.
         </p>
-        <a href="mailto:contact@hodosbrowser.com" class="contact-email">contact@hodosbrowser.com</a>
+        <p>
+          Questions, feedback, or want to contribute?
+        </p>
+        <div style="display: flex; justify-content: center; gap: var(--space-md); flex-wrap: wrap;">
+          <a href="mailto:contact@hodosbrowser.com" class="contact-email">contact@hodosbrowser.com</a>
+          <a href="https://github.com/Hodos-Browser/Hodos-Browser" class="contact-email" style="color: var(--text-secondary);">GitHub</a>
+        </div>
       </div>
     </div>
   </section>
@@ -700,14 +1114,51 @@ const description = "The browser with a built-in BitcoinSV wallet. Familiar brow
   <!-- Footer -->
   <footer>
     <div class="container">
-      <p>
-        © 2026 Marston Enterprises
-        <a href="#">Privacy</a>
-        <a href="#">Terms</a>
-        <a href="#">GitHub</a>
-      </p>
+      <div class="footer-links">
+        <a href="https://github.com/Hodos-Browser/Hodos-Browser">GitHub</a>
+        <span class="footer-sep">&middot;</span>
+        <span class="footer-muted">Privacy Policy (coming soon)</span>
+        <span class="footer-sep">&middot;</span>
+        <span class="footer-muted">Terms (coming soon)</span>
+      </div>
+      <p class="footer-copy">&copy; 2026 Marston Enterprises &middot; v{version}</p>
     </div>
   </footer>
+
+  <script>
+    // Mobile nav toggle
+    const toggle = document.querySelector('.nav-toggle');
+    const header = document.getElementById('site-header');
+    const navLinks = document.querySelectorAll('nav a');
+    if (toggle && header) {
+      toggle.addEventListener('click', () => header.classList.toggle('nav-open'));
+      navLinks.forEach(link => link.addEventListener('click', () => header.classList.remove('nav-open')));
+    }
+
+    // Scroll-based active nav highlighting
+    const sections = document.querySelectorAll('section[id]');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(link => {
+            link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+          });
+        }
+      });
+    }, { rootMargin: '-40% 0px -60% 0px' });
+    sections.forEach(s => observer.observe(s));
+
+    // Fade-in on scroll
+    const fadeObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          fadeObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
+  </script>
 
 </body>
 </html>
