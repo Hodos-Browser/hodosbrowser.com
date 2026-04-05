@@ -6,18 +6,18 @@
     <description>Auto-update feed for Hodos Browser</description>
     <language>en</language>
     <item>
-      <title>Version 0.2.0-beta.4</title>
-      <pubDate>Tue, 31 Mar 2026 19:03:00 +0000</pubDate>
-      <ns0:version>0.2.0-beta.4</ns0:version>
+      <title>Version 0.3.0-beta</title>
+      <pubDate>Sun, 05 Apr 2026 03:38:03 +0000</pubDate>
+      <ns0:version>0.3.0-beta</ns0:version>
       <ns0:os>windows</ns0:os>
-      <enclosure url="https://github.com/Hodos-Browser/Hodos-Browser/releases/download/v0.2.0-beta.4/HodosBrowser-0.2.0-beta.4-setup.exe" length="0" type="application/octet-stream" ns0:dsaSignature="MD0CHDzGPLQOFDTN2UJk+7KhatLubrvHVp0d8Ywu5ewCHQCtbRx5myx0X3C1OAM3rKc7aoTQYpQILMwRYrd5" />
+      <enclosure url="https://github.com/Hodos-Browser/Hodos-Browser/releases/download/v0.3.0-beta/HodosBrowser-0.3.0-beta-setup.exe" length="110464864" type="application/octet-stream" ns0:dsaSignature="MD0CHQCYnuOTjEvgnvUxHQx/T02RV9bXe6v3sUdklmYDAhxmjnbRMIQU6OfvigZOvpyjVLRAVnCxVhQfGqId" />
     </item>
     <item>
-      <title>Version 0.2.0-beta.4</title>
-      <pubDate>Tue, 31 Mar 2026 19:03:00 +0000</pubDate>
-      <ns0:version>0.2.0-beta.4</ns0:version>
+      <title>Version 0.3.0-beta</title>
+      <pubDate>Sun, 05 Apr 2026 03:38:03 +0000</pubDate>
+      <ns0:version>0.3.0-beta</ns0:version>
       <ns0:os>macos</ns0:os>
-      <enclosure url="https://github.com/Hodos-Browser/Hodos-Browser/releases/download/v0.2.0-beta.4/HodosBrowser-0.2.0-beta.4.dmg" length="0" type="application/octet-stream" />
+      <enclosure url="https://github.com/Hodos-Browser/Hodos-Browser/releases/download/v0.3.0-beta/HodosBrowser-0.3.0-beta.dmg" length="186814328" type="application/octet-stream" />
     </item>
   </channel>
 </rss>
