@@ -248,6 +248,19 @@ const macDownload = `https://github.com/Hodos-Browser/Hodos-Browser/releases/dow
       margin: 0 auto;
     }
     
+    .beta-badge {
+      display: inline-block;
+      padding: 4px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      border-radius: 999px;
+      margin-bottom: var(--space-sm);
+    }
+
     .hero-headline {
       display: inline-flex;
       align-items: center;
@@ -276,7 +289,7 @@ const macDownload = `https://github.com/Hodos-Browser/Hodos-Browser/releases/dow
     .hero .subtitle {
       font-size: clamp(18px, 3vw, 24px);
       color: var(--text-secondary);
-      margin-bottom: var(--space-lg);
+      margin-bottom: var(--space-md);
       max-width: 1000px;
       margin-left: auto;
       margin-right: auto;
@@ -816,6 +829,7 @@ const macDownload = `https://github.com/Hodos-Browser/Hodos-Browser/releases/dow
           <h1>Browse freely.<br><span class="gold">Transact natively.</span></h1>
         </div>
         <p class="subtitle">A real browser with a Rust-powered BitcoinSV wallet. Your keys live in a completely separate process — no extension, no custodian, just native security.</p>
+        <span class="beta-badge">Public Beta</span>
         <div class="hero-buttons">
           <a href={winDownload} class="btn btn-primary">Download for Windows</a>
           <a href={macDownload} class="btn btn-secondary">Download for Mac</a>
@@ -1066,6 +1080,7 @@ const macDownload = `https://github.com/Hodos-Browser/Hodos-Browser/releases/dow
   <section class="download" id="download">
     <div class="container">
       <div class="section-header">
+        <span class="beta-badge">Public Beta</span>
         <h2>Download Hodos Browser</h2>
         <p>Free. No account required. Your wallet, your keys, your device.</p>
       </div>
@@ -1095,7 +1110,7 @@ const macDownload = `https://github.com/Hodos-Browser/Hodos-Browser/releases/dow
         <div class="about-divider"></div>
         <h2>Built by Marston Enterprises</h2>
         <p>
-          Under the hood, Hodos is a three-layer native application — a React UI, a C++ browser engine built on Chromium Embedded Framework, and a Rust wallet backend with 76+ API endpoints, 18 database repositories, and 11 cryptography modules. Purpose-built to handle real money.
+          Under the hood, Hodos is a three-layer native application — a React UI, a C++ browser engine built on Chromium Embedded Framework, and a Rust wallet backend with 88 API endpoints, 19 database repositories, and 11 cryptography modules. Purpose-built to handle real money.
         </p>
         <p>
           Questions, feedback, or want to contribute?
