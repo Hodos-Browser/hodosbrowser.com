@@ -1,23 +1,23 @@
 <?xml version='1.0' encoding='utf-8'?>
-<rss xmlns:ns0="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
   <channel>
     <title>Hodos Browser Updates</title>
     <link>https://hodosbrowser.com</link>
     <description>Auto-update feed for Hodos Browser</description>
     <language>en</language>
     <item>
-      <title>Version 0.3.0-beta.4</title>
-      <pubDate>Sat, 18 Apr 2026 19:29:21 +0000</pubDate>
-      <ns0:version>0.3.0-beta.4</ns0:version>
-      <ns0:os>windows</ns0:os>
-      <enclosure url="https://github.com/Hodos-Browser/Hodos-Browser/releases/download/v0.3.0-beta.4/HodosBrowser-0.3.0-beta.4-setup.exe" length="110561440" type="application/octet-stream" ns0:dsaSignature="MD0CHQCJkvAUyZZkMGT7SSAE1UhqhzO50BYcHP3ofjimAhxVKztKAG6gj4BWtJm4vYuXemLT1reatVr2iYVN" />
+      <title>Version 0.3.0-beta.5</title>
+      <pubDate>Tue, 21 Apr 2026 19:23:26 +0000</pubDate>
+      <sparkle:version>0.3.0-beta.5</sparkle:version>
+      <sparkle:os>windows</sparkle:os>
+      <enclosure url="https://github.com/Hodos-Browser/Hodos-Browser/releases/download/v0.3.0-beta.5/HodosBrowser-0.3.0-beta.5-setup.exe" length="110571072" type="application/octet-stream" sparkle:dsaSignature="MD0CHA7qhrtvseJ3KvZUZ278SRXBye6Kya7RY2gJYswCHQCZnq/5KhMar6HgF3ns6XD54xuicRkCvTP7YsdE" />
     </item>
     <item>
-      <title>Version 0.3.0-beta.4</title>
-      <pubDate>Sat, 18 Apr 2026 19:29:21 +0000</pubDate>
-      <ns0:version>0.3.0-beta.4</ns0:version>
-      <ns0:os>macos</ns0:os>
-      <enclosure url="https://github.com/Hodos-Browser/Hodos-Browser/releases/download/v0.3.0-beta.4/HodosBrowser-0.3.0-beta.4.dmg" length="184794884" type="application/octet-stream" />
+      <title>Version 0.3.0-beta.5</title>
+      <pubDate>Tue, 21 Apr 2026 19:23:26 +0000</pubDate>
+      <sparkle:version>0.3.0-beta.5</sparkle:version>
+      <sparkle:os>macos</sparkle:os>
+      <enclosure url="https://github.com/Hodos-Browser/Hodos-Browser/releases/download/v0.3.0-beta.5/HodosBrowser-0.3.0-beta.5.dmg" length="184750153" type="application/octet-stream" />
     </item>
   </channel>
 </rss>
