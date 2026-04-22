@@ -6,18 +6,18 @@
     <description>Auto-update feed for Hodos Browser</description>
     <language>en</language>
     <item>
-      <title>Version 0.3.0-beta.5</title>
-      <pubDate>Tue, 21 Apr 2026 19:23:26 +0000</pubDate>
-      <sparkle:version>0.3.0-beta.5</sparkle:version>
+      <title>Version 0.3.0-beta.6</title>
+      <pubDate>Wed, 22 Apr 2026 01:41:13 +0000</pubDate>
+      <sparkle:version>0.3.0-beta.6</sparkle:version>
       <sparkle:os>windows</sparkle:os>
-      <enclosure url="https://github.com/Hodos-Browser/Hodos-Browser/releases/download/v0.3.0-beta.5/HodosBrowser-0.3.0-beta.5-setup.exe" length="110571072" type="application/octet-stream" sparkle:dsaSignature="MD0CHA7qhrtvseJ3KvZUZ278SRXBye6Kya7RY2gJYswCHQCZnq/5KhMar6HgF3ns6XD54xuicRkCvTP7YsdE" />
+      <enclosure url="https://github.com/Hodos-Browser/Hodos-Browser/releases/download/v0.3.0-beta.6/HodosBrowser-0.3.0-beta.6-setup.exe" length="110572680" type="application/octet-stream" sparkle:dsaSignature="MDwCHH3Kq6W4l855fX8qfGwh7QX9YWUwivIrCU1UXpMCHAz6Piv9mRBJSXRLI/HEdIScGmjpItbw9hbkgjw=" />
     </item>
     <item>
-      <title>Version 0.3.0-beta.5</title>
-      <pubDate>Tue, 21 Apr 2026 19:23:26 +0000</pubDate>
-      <sparkle:version>0.3.0-beta.5</sparkle:version>
+      <title>Version 0.3.0-beta.6</title>
+      <pubDate>Wed, 22 Apr 2026 01:41:13 +0000</pubDate>
+      <sparkle:version>0.3.0-beta.6</sparkle:version>
       <sparkle:os>macos</sparkle:os>
-      <enclosure url="https://github.com/Hodos-Browser/Hodos-Browser/releases/download/v0.3.0-beta.5/HodosBrowser-0.3.0-beta.5.dmg" length="184750153" type="application/octet-stream" />
+      <enclosure url="https://github.com/Hodos-Browser/Hodos-Browser/releases/download/v0.3.0-beta.6/HodosBrowser-0.3.0-beta.6.dmg" length="184843996" type="application/octet-stream" sparkle:edSignature="rQOuwrcypswBk5aUtHlC58ohJFrxuDRdRqi3kbnbE666ylpttOVdfG2H43rcZBTy6acePAnvH56k16sd9aR+Cg==" />
     </item>
   </channel>
 </rss>
