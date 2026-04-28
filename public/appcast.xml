@@ -6,18 +6,18 @@
     <description>Auto-update feed for Hodos Browser</description>
     <language>en</language>
     <item>
-      <title>Version 0.3.0-beta.7</title>
-      <pubDate>Mon, 27 Apr 2026 00:40:50 +0000</pubDate>
-      <sparkle:version>0.3.0-beta.7</sparkle:version>
+      <title>Version 0.3.0-beta.8</title>
+      <pubDate>Tue, 28 Apr 2026 14:00:25 +0000</pubDate>
+      <sparkle:version>0.3.0-beta.8</sparkle:version>
       <sparkle:os>windows</sparkle:os>
-      <enclosure url="https://github.com/Hodos-Browser/Hodos-Browser/releases/download/v0.3.0-beta.7/HodosBrowser-0.3.0-beta.7-setup.exe" length="110587768" type="application/octet-stream" sparkle:dsaSignature="MD0CHQCi/5nf+DwKYwoAp80jdO+OfL1w2wikgauz3dv5Ahwv1VXP7cnT4c2VM4sj4hTXCFLiCiFInEkxogo0" />
+      <enclosure url="https://github.com/Hodos-Browser/Hodos-Browser/releases/download/v0.3.0-beta.8/HodosBrowser-0.3.0-beta.8-setup.exe" length="110668432" type="application/octet-stream" sparkle:dsaSignature="MD0CHHKnAf/qyiGKxKSAPyAKcf8UUa32DjUhN2RC6PECHQCZGjlRYWBsrTTzdabqJF/PI9vNqs4qfAvKFVOY" />
     </item>
     <item>
-      <title>Version 0.3.0-beta.7</title>
-      <pubDate>Mon, 27 Apr 2026 00:40:50 +0000</pubDate>
-      <sparkle:version>0.3.0-beta.7</sparkle:version>
+      <title>Version 0.3.0-beta.8</title>
+      <pubDate>Tue, 28 Apr 2026 14:00:25 +0000</pubDate>
+      <sparkle:version>0.3.0-beta.8</sparkle:version>
       <sparkle:os>macos</sparkle:os>
-      <enclosure url="https://github.com/Hodos-Browser/Hodos-Browser/releases/download/v0.3.0-beta.7/HodosBrowser-0.3.0-beta.7.dmg" length="184874376" type="application/octet-stream" sparkle:edSignature="3mS6tlK61covMzz42lDYWtyMHnqvlE8eWyF6E0enZIz6V/9+UfDcu8ZMythf5pwhp4dqmk6ptgyOPiig8iXeBw==" />
+      <enclosure url="https://github.com/Hodos-Browser/Hodos-Browser/releases/download/v0.3.0-beta.8/HodosBrowser-0.3.0-beta.8.dmg" length="185012822" type="application/octet-stream" sparkle:edSignature="xzqEOOk2Bv18j6CNnY74W6gyjamULC2fNm0qOsF5sWOSJNYHCGJHALrn9ZEpURoDbWjAq5m1rYeRblciyrUhDA==" />
     </item>
   </channel>
 </rss>
