@@ -9,6 +9,7 @@
       <title>Version 0.3.0-beta.13</title>
       <pubDate>Sat, 02 May 2026 19:27:25 +0000</pubDate>
       <sparkle:version>0.3.0-beta.13</sparkle:version>
+      <sparkle:shortVersionString>0.3.0-beta.13</sparkle:shortVersionString>
       <sparkle:os>windows</sparkle:os>
       <enclosure url="https://github.com/Hodos-Browser/Hodos-Browser/releases/download/v0.3.0-beta.13/HodosBrowser-0.3.0-beta.13-setup.exe" length="110673552" type="application/octet-stream" sparkle:dsaSignature="MD0CHQCnRr0J3h+cwpVUaNfyxcUrsmz1WtaDDoeqDxfHAhw98DdnRgRrzbPRvq9jaP2FE62TGf2jHjc8mfWo" />
     </item>
@@ -16,6 +17,7 @@
       <title>Version 0.3.0-beta.13</title>
       <pubDate>Sat, 02 May 2026 19:27:25 +0000</pubDate>
       <sparkle:version>0.3.0-beta.13</sparkle:version>
+      <sparkle:shortVersionString>0.3.0-beta.13</sparkle:shortVersionString>
       <sparkle:os>macos</sparkle:os>
       <enclosure url="https://github.com/Hodos-Browser/Hodos-Browser/releases/download/v0.3.0-beta.13/HodosBrowser-0.3.0-beta.13.dmg" length="184102116" type="application/octet-stream" sparkle:edSignature="S/oUvj996bYWEPuSOhQSwpW4Xr0ECmi+WUfFZbKiwYCNZNT0D62+VVTfor11pWZtNj2Bb1Udjlcc6bHN3ZLWCg==" />
     </item>
