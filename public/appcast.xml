@@ -6,20 +6,20 @@
     <description>Auto-update feed for Hodos Browser</description>
     <language>en</language>
     <item>
-      <title>Version 0.3.0-beta.12</title>
-      <pubDate>Sat, 02 May 2026 18:27:47 +0000</pubDate>
-      <sparkle:version>0.3.0-beta.12</sparkle:version>
+      <title>Version 0.3.0-beta.13</title>
+      <pubDate>Sat, 02 May 2026 19:27:25 +0000</pubDate>
+      <sparkle:version>0.3.0-beta.13</sparkle:version>
       <sparkle:os>windows</sparkle:os>
       <sparkle:channel>beta</sparkle:channel>
-      <enclosure url="https://github.com/Hodos-Browser/Hodos-Browser/releases/download/v0.3.0-beta.12/HodosBrowser-0.3.0-beta.12-setup.exe" length="110675120" type="application/octet-stream" sparkle:dsaSignature="MDwCHGY0M9JvEcT6KcOo/Qpov5wbcgRhOOl2WLvlCqYCHHeKFfUz/F1EgtTyWNllZBwgeMTQeCZZ5cD5CGE=" />
+      <enclosure url="https://github.com/Hodos-Browser/Hodos-Browser/releases/download/v0.3.0-beta.13/HodosBrowser-0.3.0-beta.13-setup.exe" length="110673552" type="application/octet-stream" sparkle:dsaSignature="MD0CHQCnRr0J3h+cwpVUaNfyxcUrsmz1WtaDDoeqDxfHAhw98DdnRgRrzbPRvq9jaP2FE62TGf2jHjc8mfWo" />
     </item>
     <item>
-      <title>Version 0.3.0-beta.12</title>
-      <pubDate>Sat, 02 May 2026 18:27:47 +0000</pubDate>
-      <sparkle:version>0.3.0-beta.12</sparkle:version>
+      <title>Version 0.3.0-beta.13</title>
+      <pubDate>Sat, 02 May 2026 19:27:25 +0000</pubDate>
+      <sparkle:version>0.3.0-beta.13</sparkle:version>
       <sparkle:os>macos</sparkle:os>
       <sparkle:channel>beta</sparkle:channel>
-      <enclosure url="https://github.com/Hodos-Browser/Hodos-Browser/releases/download/v0.3.0-beta.12/HodosBrowser-0.3.0-beta.12.dmg" length="184101985" type="application/octet-stream" sparkle:edSignature="gBJJFt3lsrQgOX7w5665yuXPmPH3qY0Cafu35N8TWURW8WC/hFTkD0+u/dQ9e4MfOQQqlF7QXdGwx7+HboW4BA==" />
+      <enclosure url="https://github.com/Hodos-Browser/Hodos-Browser/releases/download/v0.3.0-beta.13/HodosBrowser-0.3.0-beta.13.dmg" length="184102116" type="application/octet-stream" sparkle:edSignature="S/oUvj996bYWEPuSOhQSwpW4Xr0ECmi+WUfFZbKiwYCNZNT0D62+VVTfor11pWZtNj2Bb1Udjlcc6bHN3ZLWCg==" />
     </item>
   </channel>
 </rss>
