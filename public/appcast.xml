@@ -6,20 +6,20 @@
     <description>Auto-update feed for Hodos Browser</description>
     <language>en</language>
     <item>
-      <title>Version 0.3.0-beta.10</title>
-      <pubDate>Sat, 02 May 2026 13:44:14 +0000</pubDate>
-      <sparkle:version>0.3.0-beta.10</sparkle:version>
+      <title>Version 0.3.0-beta.11</title>
+      <pubDate>Sat, 02 May 2026 14:23:24 +0000</pubDate>
+      <sparkle:version>0.3.0-beta.11</sparkle:version>
       <sparkle:os>windows</sparkle:os>
       <sparkle:channel>beta</sparkle:channel>
-      <enclosure url="https://github.com/Hodos-Browser/Hodos-Browser/releases/download/v0.3.0-beta.10/HodosBrowser-0.3.0-beta.10-setup.exe" length="110678888" type="application/octet-stream" sparkle:dsaSignature="MD4CHQCQrKDZcxQ/E2r4P+y2MiS4Dv3Uj3wvUz8fuWC7Ah0AnMr1ONfDAaBRWPMFQ+FNR1ZTFwcWJvV7otFOQg==" />
+      <enclosure url="https://github.com/Hodos-Browser/Hodos-Browser/releases/download/v0.3.0-beta.11/HodosBrowser-0.3.0-beta.11-setup.exe" length="110674392" type="application/octet-stream" sparkle:dsaSignature="MD4CHQCcWfxJmbzzDSQnxXYooICUwIa4kHEU5OKLa9DjAh0AmhUTI1dW32WVO9yQP92/TNca8zKJl7IaGejpEQ==" />
     </item>
     <item>
-      <title>Version 0.3.0-beta.10</title>
-      <pubDate>Sat, 02 May 2026 13:44:14 +0000</pubDate>
-      <sparkle:version>0.3.0-beta.10</sparkle:version>
+      <title>Version 0.3.0-beta.11</title>
+      <pubDate>Sat, 02 May 2026 14:23:24 +0000</pubDate>
+      <sparkle:version>0.3.0-beta.11</sparkle:version>
       <sparkle:os>macos</sparkle:os>
       <sparkle:channel>beta</sparkle:channel>
-      <enclosure url="https://github.com/Hodos-Browser/Hodos-Browser/releases/download/v0.3.0-beta.10/HodosBrowser-0.3.0-beta.10.dmg" length="185056792" type="application/octet-stream" sparkle:edSignature="ck61v8lvnCosEh2k/1BC2SvUIj6d+B3AewjapAn54ZKQrwjm5RqapUVJeqxIvaCsr+dxOLIowQLFjKlXUT0wCw==" />
+      <enclosure url="https://github.com/Hodos-Browser/Hodos-Browser/releases/download/v0.3.0-beta.11/HodosBrowser-0.3.0-beta.11.dmg" length="185057386" type="application/octet-stream" sparkle:edSignature="rDpbO4kGrh/3HqSRd1becK5tNxOYXxozRNx+zTMCskihPlPI6SHKJE0eGD0YqcC1dbIUrzFrKmGZNo+D40sCDg==" />
     </item>
   </channel>
 </rss>
