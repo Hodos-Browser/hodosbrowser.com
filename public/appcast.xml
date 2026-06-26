@@ -6,19 +6,19 @@
     <description>Auto-update feed for Hodos Browser</description>
     <language>en</language>
     <item>
-      <title>Version 0.3.0-beta.16</title>
-      <pubDate>Thu, 25 Jun 2026 19:29:38 +0000</pubDate>
-      <sparkle:version>0.3.0-beta.16</sparkle:version>
+      <title>Version 0.3.0-beta.17</title>
+      <pubDate>Fri, 26 Jun 2026 17:27:24 +0000</pubDate>
+      <sparkle:version>0.3.0-beta.17</sparkle:version>
       <sparkle:os>windows</sparkle:os>
-      <enclosure url="https://github.com/Hodos-Browser/Hodos-Browser/releases/download/v0.3.0-beta.16/HodosBrowser-0.3.0-beta.16-setup.exe" length="111183328" type="application/octet-stream" sparkle:dsaSignature="MDwCHAp7+LKvR5+XY0T7e0c9ca6I1cpkVPJz1ewSaYsCHHhbhaYB0K97QVMAKjf0Raz12/YbgZZpaFOHsj8=" sparkle:edSignature="GPziqgBpxEzmgMTt75dFIuiowy+wu4q6So34uYZgw30ihn0OMgiTlv2DGaulDN3cV+eCX+jzKp940CDQGzMwAQ==" />
+      <enclosure url="https://github.com/Hodos-Browser/Hodos-Browser/releases/download/v0.3.0-beta.17/HodosBrowser-0.3.0-beta.17-setup.exe" length="111186800" type="application/octet-stream" sparkle:dsaSignature="MD4CHQCGaTveQCFZplW74mPxxFFIRPCTrJ5yHIqIm01uAh0Am2e8uDv0Di+2obZv0obp1m/jS/gR1x9QIinNmA==" sparkle:edSignature="yLHZnOEq+RUuQOjD6wQROJNLLasZn0JUHKavhZ4BtgSV31q2/AwMInADHvD9/th7hv0XIBvXTl2tOuzlZ5pZAg==" />
     </item>
     <item>
-      <title>Version 0.3.0-beta.16</title>
-      <pubDate>Thu, 25 Jun 2026 19:29:38 +0000</pubDate>
-      <sparkle:version>30016</sparkle:version>
-      <sparkle:shortVersionString>0.3.0-beta.16</sparkle:shortVersionString>
+      <title>Version 0.3.0-beta.17</title>
+      <pubDate>Fri, 26 Jun 2026 17:27:24 +0000</pubDate>
+      <sparkle:version>30017</sparkle:version>
+      <sparkle:shortVersionString>0.3.0-beta.17</sparkle:shortVersionString>
       <sparkle:os>macos</sparkle:os>
-      <enclosure url="https://github.com/Hodos-Browser/Hodos-Browser/releases/download/v0.3.0-beta.16/HodosBrowser-0.3.0-beta.16.dmg" length="184981468" type="application/octet-stream" sparkle:edSignature="m4MDHvRdiqT6f+LhRzdB6axqn1ruuxUtLce1xB0fu05L8c7777Pf22EUXykUJzwHtytI1inhktug66kCK9tdCw==" />
+      <enclosure url="https://github.com/Hodos-Browser/Hodos-Browser/releases/download/v0.3.0-beta.17/HodosBrowser-0.3.0-beta.17.dmg" length="185476240" type="application/octet-stream" sparkle:edSignature="iEJucmWevlf0q5cKNKX8hOL3/xXp1cKM7mOeCY+FAukyMjyOkea+HlPrfxln3iDX208krHzcgZTfwywZxDA3CA==" />
     </item>
   </channel>
 </rss>
