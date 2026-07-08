@@ -1,7 +1,7 @@
 // Cloudflare Worker deploy config. Names the EXISTING Worker "hodosbrowser-com" so
-// `npx wrangler deploy` updates it instead of refusing (new wrangler safety guard).
-// Static Astro site (no adapter) -> assets-only Worker serving ./dist (which includes
-// appcast.xml, _redirects, and the built pages).
+// `npx wrangler deploy` updates it (new wrangler refuses to overwrite without this).
+// Static Astro site: the Cloudflare "Build command" (npm run build) produces ./dist,
+// which this deploys as the Worker's static assets (appcast.xml, _redirects, pages).
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
 	"name": "hodosbrowser-com",
